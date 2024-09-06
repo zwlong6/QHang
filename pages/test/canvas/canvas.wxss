@@ -1,0 +1,45 @@
+
+#movable-area-id{
+  border:1px solid black;
+  width:390px;
+  height:753px;
+  /* position: relative; */
+}
+#movable-view-id{
+  border:1px solid red;
+  width:606rpx;
+  height:826rpx;
+  /* position: relative; */
+}
+
+#div0 {
+    /* display: flex; */
+    width:100rpx;
+    height:100rpx;
+    border:1px solid rgb(226, 224, 224);
+    border-radius: 50rpx;
+    background-color: rgb(226, 224, 224);
+}
+#div1 {
+  transform:rotate();
+  text-align: center;
+  /* display: flex; */
+  margin-top:-50rpx;
+  width:100rpx;
+  height:50rpx;
+  border:1px solid rgb(226, 224, 224);
+  background-color: rgb(226, 224, 224);
+  
+}
+.b{
+  left: 150rpx;
+  top: 460rpx;
+  position: absolute;
+  
+}
+
+.c{
+  left: 400rpx;
+  top: 460rpx;
+  position: absolute;
+}

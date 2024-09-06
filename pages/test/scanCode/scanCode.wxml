@@ -1,0 +1,7 @@
+<!--pages/test/scanCode/scanCode.wxml-->
+<text>pages/test/scanCode/scanCode.wxml</text>
+<view class="qr-code-box">
+  <qr-container text="{{codeUrl}}" size="200" id="qr"></qr-container>
+</view>
+<view bindtap="onScanCode">点击扫码</view>
+<view>{{scanCode}}</view>

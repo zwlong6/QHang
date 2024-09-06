@@ -1,0 +1,34 @@
+/* pages/manageuser/manageuser.wxss */
+.record_search{
+  height:90rpx;
+  border-top:3rpx solid rgb(187, 187, 187);
+  border-bottom:3rpx solid rgb(187, 187, 187);
+  padding-left:20rpx;
+  padding-top:20rpx;
+  background-color: white;
+  padding-bottom:10rpx;
+}
+.record_search_1{
+  display: inline-block;
+  background-color: white;
+  height:70rpx;
+  width:560rpx;
+  border-radius: 20rpx;
+  border:5rpx solid black; 
+}
+
+.record_search_2{
+  /* padding-top:20rpx; */
+  margin-left: 30rpx;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.userbox{
+  border:3rpx solid black;
+  border-radius: 20rpx;
+  padding:40rpx;
+  margin-top:20rpx;
+  margin-left:20rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,11 @@
+#movable-area-id{
+  border:1px solid black;
+  width:700rpx;
+  height:700rpx;
+}
+#movable-view-id{
+  border:1px solid red;
+  width:300rpx;
+  height:300rpx;
+
+}

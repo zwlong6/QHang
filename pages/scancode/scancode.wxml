@@ -1,0 +1,7 @@
+<!--pages/scancode/scancode.wxml-->
+<view class="qr-code-box">
+  <qr-container text="{{codeUrl}}" size="400" id="qr" logoImage="{{static}}/launch/logo.PNG" logoScale="0.3"></qr-container>
+  <!-- <qr-container text="{{codeUrl}}" size="400" id="qr" logoImage="/static/logo.PNG" logoScale="0.3"></qr-container> -->
+
+</view>
+<view>{{scanCode}}</view>

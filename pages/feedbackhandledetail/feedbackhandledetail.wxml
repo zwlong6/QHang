@@ -1,0 +1,56 @@
+<!--pages/feedbackhandledetail/feedbackhandledetail.wxml-->
+<!-- <view wx:for="{{feedbackInfo}}" wx:key="item"> -->
+  <!-- <view wx:if="{{item.id==feedbackid}}"> -->
+    <!-- <view style="margin:20rpx;border:4rpx solid gray;border-radius: 20rpx;"> -->
+      <!-- 标题 -->
+      <!-- <view style="font-weight: bolder;padding:20rpx;">反馈标题：{{item.feedbacktitle}}</view> -->
+      <!-- 内容 -->
+      <!-- <view style="padding:20rpx;">反馈内容：{{item.feedbackcontent}}</view> -->
+      <!-- 联系人 -->
+      <!-- <view style="font-weight: bolder;padding:20rpx;">反馈人：{{item.feedbackname}}</view> -->
+      <!-- 联系电话 -->
+      <!-- <view style="font-weight: bolder;padding:20rpx;">联系电话：{{item.feedbackphone}}</view> -->
+      <!-- 已经处理 -->
+      <!-- <button style="padding:20rpx;" bindtap="onCheckfeedback" data-feedbackid="{{item.id}}">已经处理！</button> -->
+    <!-- </view> -->
+  <!-- </view> -->
+<!-- </view> -->
+
+
+<!--pages/feedback/feedback.wxml-->
+<!-- <view>
+  <view class="top">
+    <textarea class="input" name="remark" placeholder="请输入您的反馈！" auto-focus="true" bindinput="onBindinput"/>
+    <textarea class="input" name="remark" placeholder="请输入您的反馈！" auto-focus="true" bindinput="onBindinput"/>
+  </view> 
+  <view class="bottom" bindtap="onFeedbackCommit">提交</view>
+</view> -->
+
+<view wx:for="{{feedbackInfo}}" wx:key="item">
+  <view wx:if="{{item.id==feedbackid}}">
+    <view class="box">
+      <view>`</view>
+    <!-- 标题 -->
+      <view class="box_1">
+        <view>标题：{{item.feedbacktitle}}</view>
+      </view>
+    <!-- 反馈内容 -->
+      <view class="box_2">
+        {{item.feedbackcontent}}
+      </view>
+      <!-- 联系人 -->
+      <view class="box_3">
+        <view>联系人：{{item.feedbackname}}</view>
+      </view>
+    <!-- 联系电话 -->
+      <view class="box_4">
+        <view>联系电话：{{item.feedbackphone}}</view>
+      </view>
+      <!-- 提交 -->
+      <view class="box_5">
+        <button style="width:680rpx;" bindtap="onCheckfeedback" data-feedbackid="{{item.id}}">已经处理！</button>
+      </view>
+    </view>
+
+  </view>
+</view>

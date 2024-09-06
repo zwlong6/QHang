@@ -1,0 +1,7 @@
+.container {
+  padding: 20px  10px 30px;
+}
+
+.container view {
+  line-height: 30px;
+}

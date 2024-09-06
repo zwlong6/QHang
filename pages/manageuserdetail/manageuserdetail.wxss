@@ -1,0 +1,38 @@
+/* pages/manageuserdetail/manageuserdetail.wxss */
+.userdetailbox{
+  border-radius: 20rpx;
+  border:4rpx solid rgb(228, 228, 228);
+  margin:20rpx;
+  padding:20rpx;
+}
+.in_userdetailbox{
+  padding-top:40rpx;
+  padding-bottom: 60rpx;
+
+  /* border-top:4rpx solid black; */
+  border-bottom: 4rpx solid rgb(228, 228, 228);
+
+}
+
+.func{
+  text-align: center;
+  width:140rpx;
+  padding:30rpx;
+  background-color: black;
+  border-radius: 20rpx;
+  font-weight: bold;
+  color:white;
+  display: inline-block;
+  margin:10rpx;
+}
+.funcelse{
+  text-align: center;
+  width:140rpx;
+  padding:30rpx;
+  background-color: rgb(238, 238, 238);
+  border-radius: 20rpx;
+  font-weight: bold;
+  color:gray;
+  display: inline-block;
+  margin:10rpx;
+}

@@ -1,0 +1,58 @@
+<!--pages/managenotice/managenotice.wxml-->
+<view>
+  <!-- 所有公告 -->
+  <view class="top">
+    <view wx:for="{{noticeInfo}}" wx:key="item" wx:for-index="index">
+      <!-- <view bindtap="hhh" data-index="{{index}}">fdfdfdfd</view> -->
+      <!-- <template is="noticetemplate" data="{{...item}}"></template> -->
+      <view class="box">
+        <view  bindtap="onSwitchNoticeDetail" data-index="{{index}}">
+          <view style="display: inline-block;">
+            <image src="{{item.noticeimgurl}}" style="height: 200rpx;width:200rpx;"></image>
+          </view>
+          <view style="display: inline-block;margin-top: -230rpx;margin-left: 240rpx;vertical-align:middle;">
+            <view style="font-weight:bold;">{{item.noticeName}}</view>
+            <view style="color:gray">{{item.noticeCreatetime}}</view>
+          </view>
+        </view>
+        <view style="border-top:4rpx dotted gray;text-align: center;font-weight: bold;color:gray;padding-top: 20rpx;" bindtap="onDeleteNotice" data-id="{{item.id}}">删除公告</view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+  <view class="bottom">
+  <!-- 公告的管理 -->
+    <view class="in_bottom" bindtap="insertNotice">添加公告</view>
+  </view>
+</view>
+
+
+
+
+
+
+
+<template name="noticetemplate">
+  <view class="box">
+    <view  bindtap="onSwitchNoticeDetail" data-index="{{index}}">
+      <view style="display: inline-block;">
+        <image src="{{noticeimgurl}}" style="height: 200rpx;width:200rpx;"></image>
+      </view>
+      <view style="display: inline-block;margin-top: -230rpx;margin-left: 240rpx;vertical-align:middle;">
+        <view style="font-weight:bold;">{{noticeName}}</view>
+        <view style="color:gray">{{noticeCreatetime}}</view>
+      </view>
+    </view>
+    <view style="border-top:4rpx dotted gray;text-align: center;font-weight: bold;color:gray;padding-top: 20rpx;" bindtap="onDeleteNotice" data-id="{{noticeInfo.id}}">删除公告</view>
+  </view>
+
+</template>

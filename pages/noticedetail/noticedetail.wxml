@@ -1,0 +1,4 @@
+<!--pages/noticedetail/noticedetail.wxml-->
+<view>
+  <image src="{{noticeInfo[index].noticeimgurl1}}" style="margin-left:80rpx;height:700rpx;"></image>
+</view>

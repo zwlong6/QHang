@@ -1,0 +1,42 @@
+<view class="bespeakdetailbox">
+  <view style="padding:20rpx;">
+    <view class="bespeakdetail">
+      <view class="bespeakdetail_1">
+      <view style="display: inline-block;">预约座位：</view>
+      <view style="display: inline-block;font-weight: bold;">{{seat}} ({{roomName}})</view>
+      </view>
+
+      <view class="bespeakdetail_1">
+      <view style="display: inline-block;">预约时间：</view>
+      <view style="display: inline-block;font-weight: bold;">{{bespeaktimeToString}}</view>
+      </view>
+
+      <view class="bespeakdetail_1">
+      <view style="display: inline-block;">预约时长：</view>
+      <view style="display: inline-block;font-weight: bold;">{{bespeakduration}}小时</view>
+      </view>
+
+      <view style="color:rgb(196, 196, 196)">
+      ————————————————————
+      </view>
+      <view class="bespeakdetail_2">
+        <view style="display: inline-block;">费用合计：</view>
+        <view style="display: inline-block;color:#002fa7;">{{money}}元</view>
+      </view>
+    </view>
+    <view class="note">
+      <view class="note_1">温馨提示：</view>
+      <view class="note_2">
+        预约到店时间前1分钟内不可取消，可提前30分钟到店。过期60分钟座位自动释放，释放时，次卡全额退，小时卡全额退，其他支付方式不退还。
+      </view>
+    </view>
+  </view>
+  <view class="bottom_bespeakdetail">
+    <view class="bottom_bespeakdetail_1" bindtap="onChangeVip">办卡享更多优惠，立即办卡 > </view>
+    <view class="bottom_bespeakdetail_2">
+      <view class="bottom_bespeakdetail_2_1" style="display: inline-block;">共计：{{money}}元</view>
+      <view class="bottom_bespeakdetail_2_2" style="display: inline-block;" bindtap="onConfirmPay" data-money="{{money}}">确认支付</view>
+    </view>
+    
+  </view>
+</view>

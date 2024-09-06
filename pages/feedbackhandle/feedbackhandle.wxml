@@ -1,0 +1,27 @@
+<!--pages/feedbackhandle/feedbackhandle.wxml-->
+
+<view wx:for="{{feekbackInfo}}" wx:key="item">
+  <template is="feedbackhandleTemplate" data="{{...item}}"></template>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="feedbackhandleTemplate">
+  <view class="box" bindtap="onfeedbackhandledetail" data-feedbackid="{{id}}">
+    <view style="display: inline-block;font-size: 120%;font-weight: bolder;">{{feedbacktitle}}</view>
+    <view style="color:gray;margin-bottom: 10rpx;">反馈时间:{{feedbackTime}}</view>
+  </view>
+</template>
+

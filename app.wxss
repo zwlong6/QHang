@@ -1,0 +1,79 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/* 未选中 */
+/* 椅子的两部分 */
+#chair_1{
+    text-align: center;
+    /* display: flex; */
+    width:54rpx;
+    height:54rpx;
+    border-radius: 27rpx;
+    border:1px solid white;
+    background-color: white;
+    border:1px solid black;
+    /* background-color: rgb(226, 224, 224); */
+}
+#chair_2{
+  text-align: center;
+  /* display: flex; */
+  margin-top:-27rpx;
+  width:54rpx;
+  height:27rpx;
+  border:1px solid white;
+  background-color: white;
+  border:1px solid black;
+  border-top:1px solid white;
+  /* background-color: rgb(226, 224, 224); */
+}
+
+/* 选中 */
+/* 椅子的两部分 */
+#chair_3{
+  text-align: center;
+  color: white;
+  /* display: flex; */
+  width:54rpx;
+  height:54rpx;
+  border-radius: 27rpx;
+  border:1px solid #002fa7;
+  background-color: #002fa7;
+}
+#chair_4{
+text-align: center;
+/* display: flex; */
+margin-top:-27rpx;
+width:54rpx;
+height:27rpx;
+border:1px solid #002fa7;
+background-color: #002fa7;
+}
+
+/* 已经有人 */
+/* 椅子的两部分 */
+#chair_5{
+  text-align: center;
+  color: white;
+  /* display: flex; */
+  width:54rpx;
+  height:54rpx;
+  border-radius: 27rpx;
+  border:1px solid black;
+  background-color: black;
+}
+#chair_6{
+text-align: center;
+/* display: flex; */
+margin-top:-27rpx;
+width:54rpx;
+height:27rpx;
+border:1px solid black;
+background-color: black;
+}

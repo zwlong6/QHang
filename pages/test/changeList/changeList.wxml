@@ -1,0 +1,8 @@
+<view class="institutionalView">
+  <view class="tab">
+    <view class="{{item.isActive?'isActive':''}}" wx:for="{{ tabs }}" wx:key="id" data-index="{{index}}" bind:tap="changeTab">{{ item.name }}</view>
+  </view>
+  <view wx:if="{{tabs[0].isActive}}">这个是已开始</view>
+  <view wx:elif="{{tabs[1].isActive}}">这个是未开始</view>
+  <view wx:elif="{{tabs[2].isActive}}">这个是待审批</view>
+</view>

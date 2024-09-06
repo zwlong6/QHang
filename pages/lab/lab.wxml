@@ -1,0 +1,5 @@
+<view class="outer">
+  <view class="inner">
+    <image src="/static/func/func-record.png"></image>
+  </view>
+</view>

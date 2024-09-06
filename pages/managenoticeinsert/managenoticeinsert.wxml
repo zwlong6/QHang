@@ -1,0 +1,17 @@
+<!--pages/managenoticeinsert/managenoticeinsert.wxml-->
+<view class="box">
+  <view class="box_1">添加公告</view>
+  <view class="box_2">
+    <view style="display: inline-block;">公告标题：</view>
+    <input style="display: inline-block;" placeholder="请输入公告的标题" bindinput="onNoticeInput"/>
+  </view>
+  <view class="box_3">
+    <view>公告缩略图以及详情：</view>
+    <view wx:for="{{imgpaths}}" wx:key="item">
+      <image src="{{item}}" mode="aspectFit" style="width: 80rpx;height: 80rpx;" bindtap="onDeleteNoticeContentPic"></image>
+    </view>
+    <image src="{{imgpath}}" mode="aspectFit" style="width: 80rpx;height: 80rpx;" bindtap="onInsertNoticeContentPic"></image>
+  </view>
+  <view bindtap="submitt" class="box_4">提交</view>
+</view>
+

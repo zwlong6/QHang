@@ -1,0 +1,7 @@
+<!--pages/loading/loading.wxml-->
+<view>  
+  <view class="box">
+    <image class="logo" src="{{static}}/launch/flight.svg" mode="aspectFit"></image>
+  </view>
+  <view style="text-align: center;font-weight:bold;font-size: 120%;">正在帮您查找座位，请稍等...</view>
+</view>

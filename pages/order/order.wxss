@@ -1,0 +1,74 @@
+/* pages/order/order.wxss */
+.bespeakdetailbox{
+  height:1430rpx;
+}
+.bespeakdetail{
+  margin:20rpx;
+  padding:10rpx;
+  border-radius: 30rpx;
+  border:2rpx dashed gray;
+  background-color: white;
+}
+.bespeakdetail_1{
+  margin:20rpx;
+}
+
+.bespeakdetail_2{
+  padding:20rpx;
+  margin-bottom: 20rpx;
+  text-align: end;
+  font-weight: bold;
+}
+
+.note{
+  /* font-size: 30rpx; */
+  margin:20rpx;
+  padding:20rpx;
+  border-radius: 30rpx;
+  border:2rpx dashed gray;
+  background-color: white;
+}
+.note_1{
+  color:#002fa7;
+  font-weight: bold;
+}
+.note_2{
+  color:gray;
+}
+
+.bottom_bespeakdetail{
+  background-color:white;
+  text-align:center;
+  position:fixed;
+  /* 固定底部 */
+   bottom:0;
+   height:300rpx;
+   width: 750rpx;
+}
+.bottom_bespeakdetail_1{
+  border-top:2rpx solid rgb(209, 209, 209);
+  border-bottom:2rpx solid rgb(209, 209, 209);
+  padding:10rpx;
+  font-weight: bold;
+  color:#002fa7;
+  font-size: 25rpx;
+
+}
+.bottom_bespeakdetail_2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:50rpx;
+  font-weight: bold;
+}
+.bottom_bespeakdetail_2_1{
+  color:#002fa7;
+  font-size:50rpx;
+}
+.bottom_bespeakdetail_2_2{
+  color:white;
+  background-color: #002fa7;
+  padding:30rpx;
+  border-radius: 20rpx;
+  border:1rpx solid white;
+}

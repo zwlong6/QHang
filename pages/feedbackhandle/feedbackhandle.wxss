@@ -1,0 +1,7 @@
+/* pages/feedbackhandle/feedbackhandle.wxss */
+.box{
+  border:5rpx solid gray;
+  padding:20rpx;
+  margin:10rpx;
+  border-radius: 20rpx;
+}

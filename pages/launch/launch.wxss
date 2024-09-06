@@ -1,0 +1,21 @@
+/* pages/launch/launch.wxss */
+
+#box{
+  
+  width: 390px;
+  height: 553px;
+  /* border: 1px dashed #000; */
+  display: table-cell; /*主要是这个属性*/
+  vertical-align: middle; 
+  text-align:center;
+}
+#logo{
+  width:150px;
+  height:200px;
+  margin-bottom: -300px;
+}
+#logo_name{
+  width:200px;
+  height:300px;
+  margin-top:150px;
+}

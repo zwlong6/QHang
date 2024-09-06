@@ -1,0 +1,139 @@
+<view class="box">
+		<view class="map">
+			<view style="display: inline-block;">
+				<view>
+				<!--注意一定要用button标签-->
+					<button style="background-color:#f3f3f3;padding:1rpx;font-weight: bold;width:400rpx;" bindtap="navigate" data-address="{{place.address}}" data-latitude="{{place.lat}}" data-longitude="{{place.lng}}">起航自习室(24小时营业) ></button>
+					<!-- <button></button> -->
+					</view>
+				<view style="color:gray;font-size:25rpx;padding-top:10rpx;">
+					<image src="{{static}}/index/address.png" mode="aspectFill" style="width:25rpx;height: 25rpx;"></image>
+					湖北省荆州市荆州区城南街道99号
+				</view>
+			</view>
+			<view style="display: inline-block;font-weight: bold;margin:20rpx;">
+				<image src="{{static}}/index/advice.png" mode="aspectFill" style="width:50rpx;height: 50rpx;margin:30rpx;" bindtap="onFeedback"></image>
+				<image src="{{static}}/index/contact.png" mode="aspectFill" style="width:50rpx;height: 50rpx;margin:30rpx;" bindtap="onContact"></image>
+
+			</view>
+		</view>
+
+    <view class="main">
+      <swiper class="swiper"
+			 autoplay="true" 
+			 interval="3000" 
+			 duration="1000" 
+			 indicator-dots
+			 indicator-color="white"
+			 indicator-active-color="#f88c6b"
+			 circular>
+        <swiper-item wx:for="{{swipers}}" wx:key="id">
+        <image class="swiperimg" src="{{static}}/swiper/{{item}}"></image>
+
+        </swiper-item>
+      </swiper>
+    </view>
+
+		<!-- 预约 -->
+		<view style="background-color: white;">
+			<view class="bespeak">
+<!-- 在线预约还是直接入座 -->
+				<view class="bespeak_1">
+					<view wx:for="{{bespeakway}}" wx:key="item">
+						<view class="{{item.isactive==1?'bespeakisactive':'bespeak_1_1'}}" bindtap="onChangeBespeakWay" data-isactive="{{item.isactive}}">{{item.wayName}}</view>
+					</view>
+				</view>
+
+				<view class="bespeak_2">
+					<view wx:if="{{bespeakway[0].isactive==1}}">
+
+						<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+						<view class="modalDlg" wx:if="{{showModal}}">
+						<!-- 头部 -->
+						<!-- <view style="text-align:center;font-size:50rpx;">{{year}}年{{month}}月{{day}}日 {{hour}}时{{minute}}分</view> -->
+						<view style="text-align:center;padding:20rpx;font-weight: bold;font-size: 150%;">预约时间选取</view>
+								<picker-view wx:if="{{years.length>0 && months.length>0 && days.length>0}}" style="width: 100%; height: 500rpx;" indicator-style="height: 50px;" class="view_picker" value="{{valuebespeakstart}}" bindchange="bindChange">
+										<picker-view-column>
+										<view wx:for="{{years}}" wx:key='{{index1}}' class="view_picker_text">{{item}}年</view>
+										</picker-view-column>
+
+										<picker-view-column>
+										<view wx:for="{{months}}" wx:key='{{index2}}' class="view_picker_text">{{item}}月</view>
+										</picker-view-column>
+
+										<picker-view-column>
+										<view wx:for="{{days}}" wx:key='{{index3}}' class="view_picker_text">{{item}}日</view>
+										</picker-view-column>
+
+										<picker-view-column>
+										<view wx:for="{{hours}}" wx:key='{{index4}}' class="view_picker_text">{{item}}</view>
+										</picker-view-column>
+
+										<picker-view-column>
+										<view wx:for="{{minutes}}" wx:key='{{index5}}' class="view_picker_text">{{item}}</view>
+										</picker-view-column>
+								</picker-view>
+								<button bindtap="go">确定</button>
+						</view>
+
+						<view class="bespeak_2_1" bindtap="onChooseBespeakStartTime">{{bespeaktimeToString}}</view>
+						<view style="padding-left: 30rpx;color:gray">———————————————————</view>
+					
+						<view wx:if="{{bespeaktimeEndIsActive==0}}">
+							<view class="bespeak_2_2">请选择预约结束时间</view>
+						</view>
+						<view wx:if="{{bespeaktimeEndIsActive==1}}">
+							<view class="bespeak_2_2active">{{bespeaktimeEndToString}}</view>
+						</view>
+					
+						<view style="padding-left: 30rpx;color:gray">———————————————————</view>
+						<view class="bespeak_2_3">
+							<view class="{{item.isactive==1?'bespeak_2_3_1active':'bespeak_2_3_1'}}" wx:for="{{bespeakwaytime0}}" wx:key="item" bindtap="onChooseBespeakDuration1" data-bespeakduration1="{{item.id}}">{{item.name}}</view>
+						</view>
+						<view class="bespeak_2_4" bindtap="onSwitchToBespeak" data-bespeakway="1">下一步</view>
+						<!-- 使用说明，联系客服 -->
+						<view class="bespeak_2_5">
+							<view bindtap="onShowNotice">
+								<image src="{{static}}/index/explain.png" mode="aspectFill" style="width:26rpx;height: 26rpx;"></image>
+								使用说明
+							</view>
+							<view>|</view>
+							<view style="align-items: center;" bindtap="onContact">
+								<image src="{{static}}/index/contact1.png" mode="aspectFill" style="width:26rpx;height: 26rpx;"></image>
+								联系客服
+							</view>
+						</view>
+					</view>
+
+					<view wx:if="{{bespeakway[0].isactive==0}}">
+					 <view class="bespeak_2_6">
+						<view class="{{item.isactive==1?'bespeak_2_6_1active':'bespeak_2_6_1'}}}" wx:for="{{bespeakwaytime1}}" wx:key="item" bindtap="onChooseBespeakDuration2" data-bespeakduration2="{{item.id}}">{{item.name}}</view>
+					 </view>
+					 <view class="bespeak_2_7" bindtap="onSwitchToBespeak" data-bespeakway="2">下一步</view>
+						<!-- 使用说明，联系客服 -->
+						<view class="bespeak_2_8">
+							<view bindtap="onShowNotice">
+								<image src="{{static}}/index/explain.png" mode="aspectFill" style="width:26rpx;height: 26rpx;"></image>
+								使用说明
+							</view>
+							<view>|</view>
+							<view style="align-items: center;" bindtap="onContact">
+								<image src="{{static}}/index/contact1.png" mode="aspectFill" style="width:26rpx;height: 26rpx;"></image>
+								联系客服
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view>
+				<image src="{{static}}/index/note.png" mode="scaleToFill" style="height:1200rpx;width:750rpx"></image>
+			</view>
+		</view>
+
+
+
+
+		<!-- 预约座位 会员卡 -->
+
+	</view>

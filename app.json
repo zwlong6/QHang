@@ -1,0 +1,82 @@
+{
+  "pages": [
+
+    "pages/launch/launch",
+    "pages/test/uploadImage/uploadImage",
+
+    "pages/managenoticeinsert/managenoticeinsert",
+    "pages/managenotice/managenotice",
+    "pages/notice/notice",
+    "pages/manageorder/manageorder",
+    "pages/feedbackhandle/feedbackhandle",
+    "pages/user/user",
+    "pages/test/wxlogin/wxlogin",
+    "pages/index/index",
+    "pages/bespeak/bespeak",
+    "pages/order/order",
+    "pages/test/picker/picker",
+    "pages/test/changeList/changeList",
+    "pages/test/canvas/canvas",
+    "pages/vip/vip",
+    "pages/lab/lab",
+    "pages/record/record",
+    "pages/test/canvas1/canvas1",
+    "pages/test/test",
+    "pages/test/father/father",
+    "pages/test/son/son",
+    "pages/test/Interval/Inteval",
+    "pages/loading/loading",
+    "pages/feedback/feedback",
+    "pages/noticedetail/noticedetail",
+    "pages/test/scanCode/scanCode",
+    "pages/scancode/scancode",
+    "pages/feedbackhandledetail/feedbackhandledetail",
+    "pages/manageuser/manageuser",
+    "pages/manageuserdetail/manageuserdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "QIHANG",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "default"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "custom": false,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/icons/icon-home.png",
+        "selectedIconPath": "/static/icons/icon-select-home.png",
+        "text": "场馆首页"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "iconPath": "/static/icons/icon-vip.png",
+        "selectedIconPath": "/static/icons/icon-select-vip.png",
+        "text": "加入会员"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "iconPath": "/static/icons/icon-record.png",
+        "selectedIconPath": "/static/icons/icon-select-record.png",
+        "text": "使用记录"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/static/icons/icon-user.png",
+        "selectedIconPath": "/static/icons/icon-select-user.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

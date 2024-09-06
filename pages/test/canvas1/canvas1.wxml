@@ -1,0 +1,6 @@
+<view class="page-section">
+      <view class="page-section-title">可放缩</view>
+      <movable-area scale-area id="movable-area-id">
+        <movable-view id="movable-view-id" direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}">text</movable-view>
+      </movable-area>
+    </view>

@@ -1,0 +1,291 @@
+<!--pages/bespeak/bespeak.wxml-->
+<!-- 预约页面 -->
+<view id="box">
+
+  <!-- 第一层 -->
+  <view class='classify_list'>
+    <view class="classify" style="margin: auto;font-weight: bold;">{{bespeakwayname}}</view>
+
+
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modalDlg" wx:if="{{showModal}}">
+    <!-- 头部 -->
+    <!-- <view style="text-align:center;font-size:50rpx;">{{year}}年{{month}}月{{day}}日 {{hour}}时{{minute}}分</view> -->
+    <view style="text-align:center;padding:20rpx;font-weight: bold;font-size: 150%;">预约时间选取</view>
+        <picker-view wx:if="{{years.length>0 && months.length>0 && days.length>0}}" style="width: 100%; height: 500rpx;" indicator-style="height: 50px;" class="view_picker" value="{{valuebespeakstart}}" bindchange="bindChange">
+            <picker-view-column>
+            <view wx:for="{{years}}" wx:key='{{index1}}' class="view_picker_text">{{item}}年</view>
+            </picker-view-column>
+
+            <picker-view-column>
+            <view wx:for="{{months}}" wx:key='{{index2}}' class="view_picker_text">{{item}}月</view>
+            </picker-view-column>
+
+            <picker-view-column>
+            <view wx:for="{{days}}" wx:key='{{index3}}' class="view_picker_text">{{item}}日</view>
+            </picker-view-column>
+
+            <picker-view-column>
+            <view wx:for="{{hours}}" wx:key='{{index4}}' class="view_picker_text">{{item}}</view>
+            </picker-view-column>
+
+            <picker-view-column>
+            <view wx:for="{{minutes}}" wx:key='{{index5}}' class="view_picker_text">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+        <button bindtap="go">确定</button>
+    </view>
+    <view class="classify" style="margin: auto;font-weight: bold;" bindtap="datesubmit">日期选择></view>
+
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}"></view>
+    <view class="modalDlg" wx:if="{{showModal1}}">
+    <!-- 头部 -->
+    <!-- <view style="text-align:center;font-size:50rpx;">{{year}}年{{month}}月{{day}}日 {{hour}}时{{minute}}分</view> -->
+    <view style="text-align:center;padding:20rpx;font-weight: bold;font-size: 150%;">预约时长</view>
+        <picker-view style="width: 100%; height: 500rpx;" indicator-style="height: 100rpx;" class="view_picker" value="{{valuebespeakduration}}" bindchange="bindChange1">
+            <picker-view-column>
+                <view style="text-align: center;" wx:for="{{time}}" wx:key="{{index}}">{{item.name}}</view>
+            </picker-view-column>
+        </picker-view>
+        <button bindtap="go1">确定</button>
+    </view>
+     <view class="classify" style="margin: auto;font-weight: bold;" bindtap="timesubmit">预约时长></view>
+
+
+  </view>
+  <!-- 第二层 -->
+  <scroll-view class='classify_list' scroll-x="true" scroll-left="10">
+    <view class="{{item.isactive?'isactive':'classify_1'}}" wx:for="{{room}}" wx:key="id" style="margin: auto;display: inline-block;" data-roomid="{{item.roomId}}" bindtap="onRoom">{{item.roomName}}</view>
+  </scroll-view>
+  <!-- 公共区 -->
+  <view wx:if="{{roomId==0}}">
+    <movable-area scale-area id="movable-area-id">
+      <movable-view id="movable-view-id" direction="all" x="{{x}}" y="{{y}}" scale="true" scale-min="0.5" scale-max="4" scale-value="{{scale}}" style="background-image: url({{static}}/seat-imgs/room0.png);background-size: cover;">   
+        <!-- 引用模板 -->
+        <!-- 第一张椅子 -->
+            <!-- 位置(绝对定位带上) -->
+        <view id="a1">
+            <template is="chair" data="{{...chairInfo[0]}}"></template>
+        </view>
+        <view id="a2">
+            <template is="chair" data="{{...chairInfo[1]}}"></template>
+        </view>
+        <view id="a3">
+            <template is="chair" data="{{...chairInfo[2]}}"></template>
+        </view>
+        <view id="a4">
+            <template is="chair" data="{{...chairInfo[3]}}"></template>
+        </view>
+        <view id="a5">
+            <template is="chair" data="{{...chairInfo[4]}}"></template>
+        </view>
+        <view id="a6">
+            <template is="chair" data="{{...chairInfo[5]}}"></template>
+        </view>
+
+      </movable-view>
+    </movable-area>
+  </view>
+  <!-- 电脑屋 -->
+  <view wx:if="{{roomId==1}}">
+    <movable-area scale-area id="movable-area-id">
+      <movable-view id="movable-view-id" direction="all" x="{{x}}" y="{{y}}" scale="true" scale-min="0.5" scale-max="4" scale-value="{{scale}}" style="background-image: url({{static}}/seat-imgs/room1.png);background-size: cover;">   
+        <!-- 引用模板 -->
+        <!-- 第一张椅子 -->
+            <!-- 位置(绝对定位带上) -->
+        <view id="b1">
+            <template is="chair" data="{{...chairInfo[6]}}"></template>
+        </view>
+        <view id="b2">
+            <template is="chair" data="{{...chairInfo[7]}}"></template>
+        </view>
+        <view id="b3">
+            <template is="chair" data="{{...chairInfo[8]}}"></template>
+        </view>
+        <view id="b4">
+            <template is="chair" data="{{...chairInfo[9]}}"></template>
+        </view>
+        <view id="b5">
+            <template is="chair" data="{{...chairInfo[10]}}"></template>
+        </view>
+        <view id="b6">
+            <template is="chair" data="{{...chairInfo[11]}}"></template>
+        </view>
+        <view id="b7">
+            <template is="chair" data="{{...chairInfo[12]}}"></template>
+        </view>
+        <view id="b8">
+            <template is="chair" data="{{...chairInfo[13]}}"></template>
+        </view>
+        <view id="b9">
+            <template is="chair" data="{{...chairInfo[14]}}"></template>
+        </view>
+        <view id="b10">
+            <template is="chair" data="{{...chairInfo[15]}}"></template>
+        </view>
+        <view id="b11">
+            <template is="chair" data="{{...chairInfo[16]}}"></template>
+        </view>
+        <view id="b12">
+            <template is="chair" data="{{...chairInfo[17]}}"></template>
+        </view>
+        <view id="b13">
+            <template is="chair" data="{{...chairInfo[18]}}"></template>
+        </view>
+
+      </movable-view>
+    </movable-area>
+  </view>
+  <!-- 小黑屋 -->
+  <view wx:if="{{roomId==2}}">
+    <movable-area scale-area id="movable-area-id">
+      <movable-view id="movable-view-id" direction="all" x="{{x}}" y="{{y}}" scale="true" scale-min="0.5" scale-max="4" scale-value="{{scale}}" style="background-image: url({{static}}/seat-imgs/room2.png);background-size: cover;">   
+        <!-- 引用模板 -->
+        <!-- 第一张椅子 -->
+            <!-- 位置(绝对定位带上) -->
+        <view id="c1">
+            <template is="chair" data="{{...chairInfo[19]}}"></template>
+        </view>
+        <view id="c2">
+            <template is="chair" data="{{...chairInfo[20]}}"></template>
+        </view>
+        <view id="c3">
+            <template is="chair" data="{{...chairInfo[21]}}"></template>
+        </view>
+        <view id="c4">
+            <template is="chair" data="{{...chairInfo[22]}}"></template>
+        </view>
+        <view id="c5">
+            <template is="chair" data="{{...chairInfo[23]}}"></template>
+        </view>
+        <view id="c6">
+            <template is="chair" data="{{...chairInfo[24]}}"></template>
+        </view>
+        <view id="c7">
+            <template is="chair" data="{{...chairInfo[25]}}"></template>
+        </view>
+        <view id="c8">
+            <template is="chair" data="{{...chairInfo[26]}}"></template>
+        </view>
+        <view id="c9">
+            <template is="chair" data="{{...chairInfo[27]}}"></template>
+        </view>
+        <view id="c10">
+            <template is="chair" data="{{...chairInfo[28]}}"></template>
+        </view>
+        <view id="c11">
+            <template is="chair" data="{{...chairInfo[29]}}"></template>
+        </view>
+        <view id="c12">
+            <template is="chair" data="{{...chairInfo[30]}}"></template>
+        </view>
+      </movable-view>
+    </movable-area>
+  </view>
+  <!-- 独立屋 -->
+  <view wx:if="{{roomId==3}}">
+    <movable-area scale-area id="movable-area-id">
+      <movable-view id="movable-view-id" direction="all" x="{{x}}" y="{{y}}" scale="true" scale-min="0.5" scale-max="4" scale-value="{{scale}}" style="background-image: url({{static}}/seat-imgs/room3.png);background-size: cover;">   
+        <!-- 引用模板 -->
+        <!-- 第一张椅子 -->
+            <!-- 位置(绝对定位带上) -->
+            <view id="d1">
+            <template is="chair" data="{{...chairInfo[31]}}"></template>
+            </view>
+            <view id="d2">
+                <template is="chair" data="{{...chairInfo[32]}}"></template>
+            </view>
+            <view id="d3">
+                <template is="chair" data="{{...chairInfo[33]}}"></template>
+            </view>
+            <view id="d4">
+                <template is="chair" data="{{...chairInfo[34]}}"></template>
+            </view>
+            <view id="d5">
+                <template is="chair" data="{{...chairInfo[35]}}"></template>
+            </view>
+            <view id="d6">
+                <template is="chair" data="{{...chairInfo[36]}}"></template>
+            </view>
+
+      </movable-view>
+    </movable-area>
+  </view>
+  <!-- 小白屋 -->
+  <view wx:if="{{roomId==4}}">
+    <movable-area scale-area id="movable-area-id">
+      <movable-view id="movable-view-id" direction="all" x="{{x}}" y="{{y}}" scale="true" scale-min="0.5" scale-max="4" scale-value="{{scale}}" style="background-image: url({{static}}/seat-imgs/room4.png);background-size: cover;">   
+        <!-- 引用模板 -->
+        <!-- 第一张椅子 -->
+            <!-- 位置(绝对定位带上) -->
+            <view id="e1">
+            <template is="chair" data="{{...chairInfo[37]}}"></template>
+            </view>
+            <view id="e2">
+                <template is="chair" data="{{...chairInfo[38]}}"></template>
+            </view>
+            <view id="e3">
+                <template is="chair" data="{{...chairInfo[39]}}"></template>
+            </view>
+            <view id="e4">
+                <template is="chair" data="{{...chairInfo[40]}}"></template>
+            </view>
+            <view id="e5">
+                <template is="chair" data="{{...chairInfo[41]}}"></template>
+            </view>
+            <view id="e6">
+                <template is="chair" data="{{...chairInfo[42]}}"></template>
+            </view>
+            <view id="e7">
+                <template is="chair" data="{{...chairInfo[43]}}"></template>
+            </view>
+            <view id="e8">
+                <template is="chair" data="{{...chairInfo[44]}}"></template>
+            </view>
+
+
+      </movable-view>
+    </movable-area>
+  </view>
+
+
+  <view class="bottom_bespeak">
+
+    <view class="in_bottom_bespeak_1">
+      <view class="in_in_bottom_bespeak_1">
+        <image src="{{static}}/icon-bespeak/icon_bespeak_1.png" mode="aspectFit" class="img"></image>
+        可用座位
+      </view>
+      <view class="in_in_bottom_bespeak_1">
+        <image src="{{static}}/icon-bespeak/icon_bespeak_2.png" mode="aspectFit" class="img"></image>
+        选中座位
+      </view>
+      <view class="in_in_bottom_bespeak_1">
+        <image src="{{static}}/icon-bespeak/icon_bespeak_3.png" mode="aspectFit" class="img"></image>
+        已被占用
+      </view>
+    </view>
+    <!-- 预定座位 -->
+    <view class="in_bottom_bespeak_2">
+     <view class="{{bottombespeak}}" bindtap="submitbespeak">预定座位</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+<!-- <text bindtap="navigateToOrder">预约座位</text> -->
+<!-- 新建一个模板 -->
+<template name="chair">
+            <!-- 椅子的两部分 -->
+  <view  bindtap="onChooseSeat">
+    <view id="{{seatStyle1}}" data-id="{{seatId}}">{{seatId}}</view>
+    <view id="{{seatStyle2}}"></view>
+  </view>
+</template>

@@ -1,0 +1,39 @@
+<!--pages/feedback/feedback.wxml-->
+<!-- <view>
+  <view class="top">
+    <textarea class="input" name="remark" placeholder="请输入您的反馈！" auto-focus="true" bindinput="onBindinput"/>
+    <textarea class="input" name="remark" placeholder="请输入您的反馈！" auto-focus="true" bindinput="onBindinput"/>
+  </view> 
+  <view class="bottom" bindtap="onFeedbackCommit">提交</view>
+</view> -->
+
+<view class="box">
+  <view>`</view>
+<!-- 标题 -->
+  <view class="box_1">
+    <view style="width:120rpx;">标题：</view>
+    <input type="text" name="feedbacktitle" placeholder="请输入标题" style="margin-top:6rpx;" bindinput="onbindinputfeedbacktitle"/>
+    <!-- <view>
+      <textarea placeholder="反馈标题" style="width:460rpx;height:60rpx;margin-left: -30rpx;border:4rpx solid black;padding:1rpx;"></textarea>
+    </view> -->
+
+  </view>
+<!-- 反馈内容 -->
+  <view class="box_2">
+    <textarea placeholder="请输入反馈内容" style="width:620rpx;"  bindinput="onbindinputfeedbackcontent"></textarea>
+  </view>
+  <!-- 联系人 -->
+  <view class="box_3">
+    <view style="width:200rpx;">联系人：</view>
+    <input type="text" name="feedbackname" placeholder="联系人" style="margin-left:-80rpx;"  bindinput="onbindinputfeedbackname"/>
+  </view>
+<!-- 联系电话 -->
+  <view class="box_4">
+    <view style="width:200rpx;">联系电话：</view>
+    <input type="text" name="feedbackphone" placeholder="请输入您的联系电话" style="margin-left:-50rpx;"  bindinput="onbindinputfeedbackphone"/>
+  </view>
+  <!-- 提交 -->
+  <view class="box_5">
+    <button style="width:680rpx;" bindtap="onFeedbackCommit">提交</button>
+  </view>
+</view>

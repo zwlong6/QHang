@@ -1,0 +1,4 @@
+<!--pages/test/wxlogin/wxlogin.wxml-->
+<view bindtap="onL">点我！</view>
+<view>{{openid}}</view>
+<view>{{session_key}}</view>

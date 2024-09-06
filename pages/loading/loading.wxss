@@ -1,0 +1,16 @@
+/* pages/loading/loading.wxss */
+.box{
+  /* border:10rpx solid black; */
+  width: 100%;
+  height: 400rpx;
+  /* border: 1px dashed #000; */
+  /* display: table-cell; 主要是这个属性 */
+  /* vertical-align: middle;  */
+  text-align:center;
+  margin-top:300rpx;
+  margin-bottom: -80rpx;
+}
+.logo{
+  width:300rpx;
+  height:400rpx;
+}

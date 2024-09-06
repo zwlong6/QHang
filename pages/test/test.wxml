@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<custom-components my-property='{{custom_components}}' /> 
+<view>df</view>
+<text>pages/test/test.wxml</text>

@@ -1,0 +1,116 @@
+<view class="panel">
+<!-- 导航栏 -->
+  <view class="record_top">
+    <view class="{{item.isactive==1?'record_top_1active':'record_top_1'}}"  wx:for="{{recordlist}}" wx:key="item" bindtap="onChangeRecord" data-recordtopid="{{item.recordtopid}}">{{item.recordname}}</view>
+  </view>
+<!-- 订单 -->
+<!-- wx:for和template的嵌套 -->
+  <view wx:for="{{orderInfo}}" wx:key="item">
+    <view wx:if="{{(recordlist[0].isactive==1)}}">
+      <template is="recordtemplate" data="{{...item}}"></template>
+    </view>
+
+    <view wx:if="{{(item.orderStatus==0||(item.orderStatus==1 && item.sitflag==0))&&(recordlist[1].isactive==1)}}">
+      <template is="recordtemplate" data="{{...item}}"></template>
+    </view>
+
+    <view wx:if="{{((item.orderStatus==1 && item.sitflag==1)||item.orderStatus==4)&&(recordlist[2].isactive==1)}}">
+      <template is="recordtemplate" data="{{...item}}"></template>
+    </view>
+
+    <view wx:if="{{(item.orderStatus==2||item.orderStatus==3)&&(recordlist[3].isactive==1)}}">
+      <template is="recordtemplate" data="{{...item}}"></template>
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
+
+<!-- 新建记录(订单记录模板)的模板 -->
+<template name="recordtemplate">
+  <view class="record_bottom">
+<!-- 座位号 在哪个屋子  消费了吗 -->
+      <view class="record_bottom_1">
+        <view class="record_bottom_1_1" style="display: inline-block;">
+          <view  style="display: inline-block;" wx:if="{{seatRoomId==0}}">公共区</view>
+          <view  style="display: inline-block;" wx:if="{{seatRoomId==1}}">电脑屋</view>
+          <view  style="display: inline-block;" wx:if="{{seatRoomId==2}}">小黑屋</view>
+          <view  style="display: inline-block;" wx:if="{{seatRoomId==3}}">独立屋</view>
+          <view  style="display: inline-block;" wx:if="{{seatRoomId==4}}">小白屋</view>
+          <view  style="display: inline-block;">{{orderSeatId}}</view>
+        </view>
+
+        <view class="record_bottom_1_2" style="display: inline-block;">
+          <view wx:if="{{orderStatus==0}}">未消费</view>
+          <view wx:if="{{orderStatus==1}}">
+            <view wx:if="{{sitflag==0}}">
+              <view>未消费</view>
+            </view>
+            <view wx:if="{{sitflag==1}}">
+              <view>正在消费</view>
+            </view>
+          </view>
+          <view wx:if="{{orderStatus==2}}">已取消</view>
+          <view wx:if="{{orderStatus==3}}">已取消</view>
+          <view wx:if="{{orderStatus==4}}">已消费</view>
+        </view>
+      </view>
+<!-- 什么期间  查询座位开始/结束时间  持续时间 -->
+      <view class="record_bottom_2">
+      <!-- 1 -->
+        <view class="in_record_bottom_2">
+          <view class="in_record_bottom_2_1_1">{{orderBeginTimeToStringDate}}</view>
+          <view class="in_record_bottom_2_1_2">{{orderBeginTimeToStringTime}}</view>
+        </view>
+        <!-- 2 -->
+        <view class="in_record_bottom_2">
+          <view class="in_record_bottom_2_2_1">{{bespeakduration}}小时</view>
+          <view class="in_record_bottom_2_2_2">————></view>
+        </view>
+        <!-- 3 -->
+        <view class="in_record_bottom_2">
+          <view class="in_record_bottom_2_3_1">{{orderStopTimeToStringDate}}</view>
+          <view class="in_record_bottom_2_3_2">{{orderStopTimeToStringTime}}</view>
+        </view>
+      </view>
+<!-- 支付时间 -->
+      <view class="record_bottom_3">支付时间 : {{createTime}}</view>
+
+
+      <view class="record_bottom_5">
+        <view class="in_record_bottom_5_1">订单号：{{id}}</view>
+        <view wx:if="{{orderStatus==0||(orderStatus==1 && sitflag==0)}}" style="display: inline-block;">
+          <view class="in_record_bottom_5_2" bindtap="onCancelOrderById" data-id="{{id}}">取消预约</view>
+        </view>
+      </view>
+<!-- 扫码开门 或者显示未到使用时间   ，取消预约-->
+      <view class="record_bottom_4">
+        <view wx:if="{{orderStatus==0}}">
+          <view class="in_record_bottom_4_1">未到预约时间</view>
+        </view>
+        <view wx:if="{{orderStatus==1}}">
+          <view wx:if="{{sitflag==0}}">
+            <view class="in_record_bottom_4_1" bindtap="onSitDown" data-id="{{id}}">扫码入座</view>
+          </view>
+          <view wx:if="{{sitflag==1}}">
+            <view class="in_record_bottom_4_1">已经入座</view>
+          </view>
+        </view>
+        <view wx:if="{{orderStatus==2}}">
+          <view class="in_record_bottom_4_1">已取消</view>
+        </view>
+        <view wx:if="{{orderStatus==3}}">
+          <view class="in_record_bottom_4_1">已失约</view>
+        </view>
+        <view wx:if="{{orderStatus==4}}">
+          <view class="in_record_bottom_4_1">订单已完成</view>
+        </view>
+
+      </view>
+
+    </view>
+</template>

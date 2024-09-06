@@ -1,0 +1,5 @@
+/* pages/scancode/scancode.wxss */
+.qr-code-box{
+  margin-top:100rpx;
+  margin-left: 160rpx;
+}

@@ -1,0 +1,146 @@
+<view class="panel">
+  <!-- 上半部分 -->
+  <view class="top">\n</view>
+  
+  <!-- 下半部分 -->
+  <view class="bottom">
+  <!-- 第一个卡片 -->
+    <view class="bottom_1">
+    <!-- 头像 昵称 -->
+      <view class="bottom_1_1">
+        <view wx:if="{{userInfo.id!=0}}">
+          <view class="bottom_1_1_1">
+            <image class="bottom_1_1_1_1" src="{{userInfo.imgurl}}"></image>
+          </view>
+          <view class="bottom_1_1_2">昵称: {{userInfo.username}}</view>
+          <view wx:if="{{userInfo.type==0}}" style="color:red;margin-left: 210rpx;">超级管理员</view>
+        </view>
+
+        <view wx:if="{{userInfo.id==0}}">
+          <view style="padding-left:40rpx;padding-top:40rpx;font-size: 120%;font-weight: bold;color:red;" bindtap="getUserInfo">请登录！</view>
+        </view>
+       
+
+      </view>
+      <!-- <view style="margin-top:40rpx;color:rgb(245, 245, 245);">_________________________________________________</view> -->
+      <!-- 我的资产 -->
+      <view class="bottom_1_2">
+
+        <view class="bottom_1_2_1" style="margin-top:80rpx;">
+          <view class="bottom_1_2_1_1">
+            <view style="display: inline-block;font-size: 130%;font-weight: bold;">99</view>
+            <view style="display: inline-block;">张</view>
+          </view>
+          <view class="bottom_1_2_1_2">会员卡</view>
+        </view>
+
+        <view class="bottom_1_2_2">
+          <view class="bottom_1_2_2_1">
+            <view style="display: inline-block;font-size: 130%;font-weight: bold;">99</view>
+            <view style="display: inline-block;">张</view>
+          </view>
+          <view class="bottom_1_2_2_2">优惠券</view>
+        </view>
+
+        <view class="bottom_1_2_3">
+          <view class="bottom_1_2_3_1">
+            <view style="display: inline-block;font-size: 130%;font-weight: bold;">99</view>
+            <view style="display: inline-block;">分</view>
+          </view>
+          <view  class="bottom_1_2_3_2">积分</view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 第二个卡片 -->
+    <view class="bottom_2">
+      <view class="bottom_2_1">
+        <view>
+          <image style="margin-left:10rpx;height:60rpx;width:60rpx;" src="{{static}}/func/rank.svg"></image>
+          <!-- <image style="margin-left:10rpx;height:60rpx;width:60rpx;" src="/static/rank.svg"></image> -->
+        </view>
+        <view style="font-size: 80%;color:rgb(73, 73, 73);">排行榜</view>
+      </view>
+
+      <view class="bottom_2_2" bindtap="onSwitchNotice">
+        <view>
+          <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/func/notice.svg"></image>
+          <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/notice.svg"></image> -->
+        </view>
+        <view style="font-size: 80%;color:rgb(73, 73, 73);">门店公告</view>
+      </view>
+
+      <view class="bottom_2_3">
+        <view>
+          <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/func/help.svg"></image>
+          <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/help.svg"></image> -->
+
+        </view>
+        <view style="font-size: 80%;color:rgb(73, 73, 73);">使用帮助</view>
+      </view>
+
+      <view class="bottom_2_4">
+        <view>
+          <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/func/contact.svg"></image>
+          <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/contact.svg"></image>   -->
+        </view>
+        <view style="font-size: 80%;color:rgb(73, 73, 73);">联系商家</view>
+
+      </view>
+    
+    </view>
+    
+    <!-- 第三个卡片，只有管理员可见 -->
+    <view wx:if="{{userInfo.type==0}}">
+
+      <view class="bottom_3">
+        <view class="bottom_3_1" bindtap="onManageUser">
+          <view>
+            <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/manage/manage_user.svg"></image>
+            <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/manage_user.svg"></image> -->
+          </view>
+          <view style="font-size: 80%;color:rgb(73, 73, 73);">用户管理</view>
+        </view>
+
+        <view class="bottom_3_2" bindtap="onManageOrder">
+          <view>
+            <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/manage/manage_order.svg"></image>
+            <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/manage_order.svg"></image> -->
+          </view>
+          <view style="font-size: 80%;color:rgb(73, 73, 73);">订单管理</view>
+        </view>
+
+        <view class="bottom_3_3" bindtap="onManageNotice">
+          <view>
+            <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/manage/manage_note.svg"></image>
+            <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/manage_note1.svg"></image> -->
+          </view>
+          <view style="font-size: 80%;color:rgb(73, 73, 73);">公告管理</view>
+        </view>
+
+        <view class="bottom_3_4" bindtap="onManageFeedbackHandle">
+          <view>
+            <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/manage/manage_feedback.svg"></image>
+            <!-- <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="/static/manage_feedback.svg"></image>   -->
+          </view>
+          <view style="font-size: 80%;color:rgb(73, 73, 73);">反馈管理</view>
+        </view>
+
+        <view class="bottom_3_5" bindtap="onManageScanCode">
+          <!-- logoImage="{{config.logoImage}}" -->
+          <view>
+            <image style="margin-left:20rpx;height:60rpx;width:60rpx;" src="{{static}}/manage/manage_signin.svg"></image>
+            <!-- <image style="margin-left:34rpx;height:60rpx;width:60rpx;" src="/static/manage_signin.svg"></image>   -->
+          </view>
+          <view style="font-size: 80%;color:rgb(73, 73, 73);">签到管理</view>
+        </view>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+
+</view>

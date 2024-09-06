@@ -1,0 +1,4 @@
+<!--pages/test/uploadImage/uploadImage.wxml-->
+<button bindtap="onUpLoad">点击上传图片</button>
+<image src="{{tempFilePaths[0]}}"></image>
+<image src="{{tempFilePaths[1]}}"></image>

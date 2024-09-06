@@ -1,0 +1,96 @@
+/* pages/feedback/feedback.wxss */
+/* .top{
+  margin-top: 40rpx;
+  height: 500rpx;
+}
+.input{
+  border:2rpx solid black;
+  border-radius: 20rpx;
+  height: 500rpx;
+  width:700rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.bottom{
+  margin-top: 20rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  padding:30rpx;
+  background-color: black;
+  color:white;
+  font-weight: bold;
+  margin-left: 420rpx;
+  margin-right: 30rpx;
+} */
+
+.box{
+  background-color: white;
+  height:1448rpx;
+}
+.box_1{
+  border:4rpx solid gray;
+  display: flex;
+  margin-top:-28rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  width:670rpx;
+  height:80rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  /* padding:20rpx; */
+  padding-top:30rpx;
+  padding-left:40rpx;
+  font-weight: bold;
+  font-size: 120%;
+}
+.box_2{
+  border:4rpx solid gray;
+  margin-top:10rpx;
+  width:630rpx;
+  height:300rpx;
+  background-color: white;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  border-radius: 20rpx;
+  padding:40rpx;
+}
+.box_3{
+  border:4rpx solid gray;
+  font-weight: bold;
+  display: flex;
+  width:670rpx;
+  height:80rpx;
+  /* padding:20rpx; */
+  padding-left: 40rpx;
+  padding-top:40rpx;
+  border-radius: 20rpx;
+  margin-top:10rpx;
+  background-color: white;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.box_4{
+  border:4rpx solid gray;
+  font-weight: bold;
+  display: flex;
+  width:670rpx;
+  height:80rpx;
+  /* padding:20rpx; */
+  padding-left: 40rpx;
+  padding-top:40rpx;
+  border-radius: 20rpx;
+  margin-top:10rpx;
+  background-color: white;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.box_5{
+  border:4rpx solid gray;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 24rpx;
+  padding-top:10rpx;
+  padding-bottom: 10rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}

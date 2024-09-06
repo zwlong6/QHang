@@ -1,0 +1,28 @@
+/* pages/managenotice/managenotice.wxss */
+.box{
+  margin:30rpx;
+  border:5rpx dotted rgb(216, 216, 216);
+  border-radius: 20rpx;
+  /* height:200rpx; */
+  padding:30rpx;
+}
+
+
+.bottom{
+  background-color:white;
+  text-align:center;
+  position:fixed;
+  /* 固定底部 */
+   bottom:0;
+   height:300rpx;
+   width: 750rpx;
+}
+.in_bottom{
+  display: inline-block;
+  padding:30rpx;
+  background-color: black;
+  color:white;
+  font-weight: bold;
+  border-radius: 20rpx;
+  margin:20rpx;
+}

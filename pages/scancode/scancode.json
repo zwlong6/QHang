@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "扫描二维码签到",
+  "usingComponents": {
+    "qr-container": "/pages/test/wx-qr"
+  }
+}

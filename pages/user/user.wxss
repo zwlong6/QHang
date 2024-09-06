@@ -1,0 +1,129 @@
+/* pages/user/user.wxss */
+.top{
+  background-image: url('https://www.zwlserver.top/pictures/wallpaper.jpg');
+  background-size:740rpx 250%;
+  height:450rpx;
+}
+.bottom{
+  /* background-color: #002fa7; */
+  height:905rpx;
+  margin-top:-50rpx;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  border:4rpx solid #002fa7;
+  border-left: 1rpx solid white;
+  border-right: 1rpx solid white;
+  border-bottom: 1rpx solid white;
+  /* border-top:4rpx solid rgb(226, 226, 226); */
+}
+.bottom_1{
+  margin-top:-120rpx;
+  height:360rpx;
+  border:3rpx solid #002fa7;
+  /* border:5rpx dotted black; */
+  border-radius: 40rpx;
+  background-color: white;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.bottom_1_1_1{
+  display: inline-block;
+}
+/* 头像 */
+.bottom_1_1_1_1{
+  margin:20rpx;
+  height:140rpx;
+  width:140rpx;
+  border-radius: 70rpx;
+  margin-bottom: -80rpx;
+}
+.bottom_1_1_2{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30rpx;
+  font-weight: bold;
+}
+.bottom_1_2_1{
+  display: inline-block;
+  margin-left: 76rpx;
+  margin-right: 60rpx;
+}
+.bottom_1_2_2{
+  display: inline-block;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+}
+.bottom_1_2_3{
+  display: inline-block;
+  margin-left: 60rpx;
+  margin-right: 50rpx;
+}
+.bottom_2{
+  margin-top:40rpx;
+  height:220rpx;
+  border:3rpx solid #002fa7;
+  border-radius: 40rpx;
+  background-color: white;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.bottom_2_1{
+  margin-top: 60rpx;
+  display: inline-block;
+  margin-left: 50rpx;
+  margin-right: 40rpx;
+}
+.bottom_2_2{
+  display: inline-block;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.bottom_2_3{
+  display: inline-block;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.bottom_2_4{
+  display: inline-block;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.bottom_3{
+  margin-top:40rpx;
+  height:220rpx;
+  border:3rpx solid #002fa7;
+  border-radius: 40rpx;
+  background-color: white;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.bottom_3_1{
+  margin-top: 60rpx;
+  display: inline-block;
+  margin-left: 46rpx;
+  margin-right: 10rpx;
+}
+.bottom_3_2{
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.bottom_3_3{
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.bottom_3_4{
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.bottom_3_5{
+  display: inline-block;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+

@@ -1,0 +1,39 @@
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+  }
+  .modalDlg{
+  width: 648rpx;
+  height: 748rpx;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  z-index: 9999;
+  margin: -270rpx 50rpx;
+  background-color: rgb(233, 235, 232);
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .time_text{
+  text-align: center;
+  font-size:60rpx;
+  }
+  .view_picker{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx; 
+  }
+  .view_picker_text{
+  /* padding-left:35rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }

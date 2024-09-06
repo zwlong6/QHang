@@ -1,0 +1,39 @@
+<!--pages/manageuser/manageuser.wxml-->
+<view>
+  <!-- 搜索框 -->
+  <view class="record_search">
+  <!-- 搜索内容 -->
+    <view class="record_search_1">
+      <input style="margin-top:10rpx;padding-left:20rpx;" placeholder="请输入用户的id" bindinput="onBindInput" bindconfirm="onSearchbindConfirm"/>
+    </view>
+    <!-- 搜索按钮 -->
+    <view class="record_search_2" style="font-size: 120%;" bindtap="onSearchbindConfirm">搜 索</view>
+  </view>
+
+  <view wx:if="{{searchId==0}}">
+    <view wx:for="{{userInfos}}" wx:key="item">
+      <template is="usertemplate" data="{{...item}}"></template>
+    </view>
+  </view>
+  <view wx:else>
+    <template is="usertemplate" data="{{...userInfos[userInfosId]}}"></template>
+  </view>
+
+
+</view>
+
+
+<!-- 用户简略模板 -->
+
+<template name="usertemplate">
+  <!-- 用户 -->
+  <view class="userbox" bindtap="onbindUserDetail" data-id="{{id}}">
+    <view style="display: inline-block;">
+      <view style="font-weight:bold;">用户昵称：{{username}}</view>
+      <view>用户id：{{id}}</view>
+    </view>
+    <view style="display: inline-block;float:right;">
+      <image src="{{imgurl}}" mode="aspectFit" style="width: 100rpx;height:100rpx;border-radius:50rpx; overflow: hidden;"></image>
+    </view>
+  </view>
+</template>

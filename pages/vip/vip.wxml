@@ -1,0 +1,66 @@
+<!--pages/vip/vip.wxml-->
+<view class="panel1">
+  <view class="package">
+  <!-- 传了两个参数 -->
+    <text decode="{{true}}" class="{{tagId==1 ? 'active':'noactive'}}" bindtap="getChoose" data-tagIds="1">期限卡 &nbsp;&nbsp;&nbsp;</text>
+    <text decode="{{true}}" class="{{tagId==2 ? 'active':'noactive'}}" bindtap="getChoose" data-tagids="2">计次卡 &nbsp;&nbsp;&nbsp;</text>
+    <text decode="{{true}}" class="{{tagId==3 ? 'active':'noactive'}}" bindtap="getChoose" data-tagIds="3">小时卡 &nbsp;&nbsp;&nbsp;</text>
+    <!-- data-choose="{{'https://47.99.33.173/vip-imgs/3.jpg'}}" -->
+  </view>
+
+  <!-- 默认加载期限卡 -->
+  <!-- 循环 -->
+  <view wx:for="{{products}}"
+        wx:for-item="item"
+        wx:for-index="index"
+        wx:key="id"
+
+        >
+
+    <!-- 第一个卡片 -->
+    <view class="box" style="border:5rpx solid rgb(221, 221, 221);">
+  
+      <view class="box1">
+        <image class="bg-image" src="{{item.productTypeSrc}}"></image>
+      
+        <!-- 卡的名称 -->
+
+          <view class="box1_1">
+            <view> </view>
+            <view wx:if="{{tagId==1}}" class="name">期限卡</view>
+            <view wx:if="{{tagId==2}}" class="name">计次卡</view>
+            <view wx:if="{{tagId==3}}" class="name">小时卡</view>
+          </view>
+          <!-- 天数 -->
+          <view class="box1_2">
+            <span wx:if="{{tagId==1}}" class="box1_2_1">{{item.productAttributeDay}}</span>
+            <span wx:if="{{tagId==2}}" class="box1_2_1">{{item.productAttributeTimes}}</span>
+            <span wx:if="{{tagId==3}}" class="box1_2_1">{{item.productAttributeTime}}</span>
+            <span wx:if="{{tagId==1}}" class="box1_2_2">天</span>
+            <span wx:if="{{tagId==2}}" class="box1_2_2">次</span>
+            <span wx:if="{{tagId==3}}" class="box1_2_2">小时</span>
+          </view>
+          <!-- 套餐名称 -->
+          <view class="box1_3">
+            <view class="box1_3_1">{{item.productName}}</view>
+          </view>
+          <!-- 使用规则 -->
+          <view class="box1_4">
+            <view class="box1_4_1">使用规则</view>
+          </view>
+      </view>
+
+      <view class="box2">
+        <view class="box2_1">
+          <text class="box2_1_1"> 有效期：使用后{{item.productIndate}}天 </text>
+          <text decode="true">&ensp;&ensp;</text>
+          <!-- 原价 -->
+          <text class="box2_1_2">￥{{item.productPrePrice}}</text>
+          <!-- 现价 -->
+          <text class="box2_1_3">￥{{item.productPrice}}</text>
+        </view>
+      </view>
+    </view>
+ <!-- 循环的view -->
+  </view>
+</view>

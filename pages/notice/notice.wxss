@@ -1,0 +1,8 @@
+/* pages/notice/notice.wxss */
+.box{
+  margin:30rpx;
+  border:5rpx dotted rgb(216, 216, 216);
+  border-radius: 20rpx;
+  height:200rpx;
+  padding:30rpx;
+}

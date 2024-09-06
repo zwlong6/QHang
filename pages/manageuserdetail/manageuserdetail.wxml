@@ -1,0 +1,76 @@
+<!--pages/manageuserdetail/manageuserdetail.wxml-->
+<!-- <view>{{userInfoTarget.username}}</view> -->
+<view class="userdetailbox">
+<!-- 头像 -->
+  <view>
+    <view style="padding-top:40rpx;padding-bottom:40rpx;font-weight: bold;display: inline-block;float:left;">头像</view>
+    <view style="display: inline-block;float:right;">
+      <image src="{{userInfoTarget.imgurl}}" mode="aspectFit" style="width: 140rpx;height:140rpx;border-radius:70rpx; overflow: hidden;"></image>
+    </view>
+  </view>
+
+  <!-- 用户昵称 -->
+  <view class="in_userdetailbox"style="margin-top:150rpx;border-top:4rpx solid rgb(228, 228, 228);">
+    <view style="font-weight: bold;display: inline-block;float:left;">昵称</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.username}} ></view>
+  </view>
+
+  <!-- 用户id -->
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">ID</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.id}} ></view>
+  </view>
+
+
+  <!-- 性别 -->
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">性别</view>
+    <voew style="display: inline-block;float:right;">{{userInfoTarget.sex}} ></voew>
+  </view>
+  <!-- 手机号 -->
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">手机号</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.mobile}} ></view>
+  </view>
+  <!-- 注册时间 -->
+
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">注册时间</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.registerTime}} ></view>
+  </view>
+  <!-- 地区 -->
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">地区</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.country}} ></view>
+  </view>
+  <!-- 生日 -->
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">生日</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.birthday}} ></view>
+  </view>
+  <!-- 积分 -->
+  <view class="in_userdetailbox">
+    <view style="font-weight: bold;display: inline-block;float:left;">积分</view>
+    <view style="display: inline-block;float:right;">{{userInfoTarget.score}} ></view>
+  </view>
+<!-- 功能 -->
+  <view style="margin-top: 20rpx;">
+<!-- 功能1 拉黑 -->
+    <view wx:if="{{userInfoTarget.status==0}}" style="display:inline-block;">
+      <view class="func" bindtap="onBlacklist" data-id="{{userInfoTarget.id}}">拉黑</view>
+    </view>
+    <view wx:else style="display:inline-block;">
+      <view class="funcelse">拉黑</view>
+    </view>
+<!-- 功能2 解除拉黑 -->
+    <view wx:if="{{userInfoTarget.status==1}}" style="display:inline-block;">
+      <view class="func" bindtap="onUnBlacklist" data-id="{{userInfoTarget.id}}">解除拉黑</view>
+    </view>
+    <view wx:else style="display:inline-block;">
+      <view class="funcelse">解除拉黑</view>
+    </view>
+    <!-- 功能3 积分管理 -->
+    <view class="func">积分管理</view>
+  </view>
+
+</view>
